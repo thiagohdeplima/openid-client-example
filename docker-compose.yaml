@@ -1,0 +1,15 @@
+version: "3.8"
+
+networks:
+  application: {}
+
+services:
+  authorization-server:
+    image: "quay.io/keycloak/keycloak:15.0.2"
+    ports:
+    - 8080:8080
+    networks:
+    - application
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
